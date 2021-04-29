@@ -31,15 +31,15 @@ public class ValidController {
         if(bindingResult.hasErrors()){
             return bindingResult.getFieldError().getDefaultMessage();
         }
-        return "OK";
+        return "Hello_Valid";
     }
 
     @RequestMapping("validated")
     @ResponseBody
-    public String showValidated(@RequestBody @Valid Student student, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()){
-            return bindingResult.getFieldError().getDefaultMessage();
-        }
+    public String showValidated(@RequestBody @Valid Student student) {
+//        if(bindingResult.hasErrors()){
+//            return bindingResult.getFieldError().getDefaultMessage();
+//        }
         return "Hello_Validated";
     }
 }

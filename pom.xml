@@ -11,6 +11,7 @@
 
   <modules>
     <module>SpringMVC</module>
+    <module>Mybatis</module>
   </modules>
 
   <parent>
@@ -58,11 +59,13 @@
       <artifactId>spring-boot-starter-validation</artifactId>
       <version>${springboot.starter.validation}</version>
     </dependency>
-    <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
-      <version>${validation.api}</version>
-    </dependency>
+
+<!--    <dependency>-->
+<!--      <groupId>javax.validation</groupId>-->
+<!--      <artifactId>validation-api</artifactId>-->
+<!--      <version>${validation.api}</version>-->
+<!--    </dependency>-->
+
 <!--    <dependency>-->
 <!--      <groupId>org.glassfish</groupId>-->
 <!--      <artifactId>jakarta.el</artifactId>-->
