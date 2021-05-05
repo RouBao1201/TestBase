@@ -1,0 +1,20 @@
+#数据库连接配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/testcoms?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: mysql
+    type: com.alibaba.druid.pool.DruidDataSource
+#mybatis
+mybatis:
+  type-aliases-package: com.syb.pojo
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true #开启mybatis驼峰命名转换
+logging:
+  level:
+    root: info
+    com:
+      syb: debug
+  config: classpath:logback-spring.xml

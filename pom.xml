@@ -29,6 +29,11 @@
     <hibernate.validator>6.1.0.Final</hibernate.validator>
     <springboot.starter.validation>2.4.4</springboot.starter.validation>
     <validation.api>2.0.1.Final</validation.api>
+    <druid.alibaba.springboot.starter>1.1.10</druid.alibaba.springboot.starter>
+    <druid.alibaba>1.2.4</druid.alibaba>
+    <mybatis.springboot.start>2.1.4</mybatis.springboot.start>
+    <mysql.connector.java>8.0.23</mysql.connector.java>
+    <springboot.aop>2.2.6.RELEASE</springboot.aop>
   </properties>
 
   <dependencies>
@@ -49,15 +54,43 @@
       <artifactId>spring-boot-starter-web</artifactId>
       <version>${springboot.start.web}</version>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>org.hibernate.validator</groupId>-->
-<!--      <artifactId>hibernate-validator</artifactId>-->
-<!--      <version>${hibernate.validator}</version>-->
-<!--    </dependency>-->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>${hibernate.validator}</version>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-validation</artifactId>
       <version>${springboot.starter.validation}</version>
+    </dependency>
+    <!--druid连接池依赖-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>${druid.alibaba.springboot.starter}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>${druid.alibaba}</version>
+    </dependency>
+    <!--mybatis依赖-->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>${mybatis.springboot.start}</version>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.connector.java}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-aop</artifactId>
+      <version>${springboot.aop}</version>
     </dependency>
 
 <!--    <dependency>-->

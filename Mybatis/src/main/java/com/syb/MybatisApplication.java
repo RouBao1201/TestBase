@@ -2,16 +2,17 @@ package com.syb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author Abin
- * @Description:
- * @Date: Created in 21:04 2021/4/28
+ * @date Created in 2021/5/1 0:35
  * @Modified By:
+ * @Description
  */
 @SpringBootApplication
-public class SpringMvcTestApplication {
+public class MybatisApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringMvcTestApplication.class, args);
+        SpringApplication.run(MybatisApplication.class, args);
     }
 }

@@ -4,13 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
 
 /**
- * @Auther: Abin
+ * @author Abin
  * @Description:
  * @Date: Created in 21:16 2021/4/28
  * @Modified By:

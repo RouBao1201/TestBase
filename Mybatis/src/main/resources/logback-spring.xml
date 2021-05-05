@@ -1,0 +1,50 @@
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+<!--    @配置文件的区别：logback.xml  logback-spring.xml
+        springProfile（指定某段配置在某个环境下生效）：
+        只能在日志配置文件为logback-spring.xml中使用，因为此时日志配置是有springboot进行解析。
+        logback.xml是由日志框架进行记载日志配置项的，所以没有springProfile
+-->
+
+    <!--    输出控制台-->
+    <!--    ConsoleAppender-->
+    <appender name="ROOTINFO" class="ch.qos.logback.core.ConsoleAppender">
+        <!--LevelFilter过滤器：将过滤器的日志级别配置为INFO，所有INFO级别的日志交给appender处理，非INFO级别的日志，被过滤掉-->
+        <!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+        <!--            <level>INFO</level>-->
+        <!--            <onMatch>ACCEPT</onMatch>-->
+        <!--            <onMismatch>DENY</onMismatch>-->
+        <!--        </filter>-->
+
+        <!--ThresholdFilter过滤器：临界值过滤器，过滤掉低于指定临界值的日志。
+        当日志级别等于或高于临界值时，过滤器返回NEUTRAL；当日志级别低于临界值时，日志会被拒绝（例如：过滤掉 TRACE 和 DEBUG 级别的日志）-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <!-- encoder 默认配置为PatternLayoutEncoder -->
+        <!--日志输出格式-->
+        <springProfile name="dev">
+            <encoder>
+                <pattern>Time：%d{yyyy-MM-dd HH:mm:ss.SSS} --> Thread：[%thread] %-5level %logger{50} --> %msg%n</pattern>
+            </encoder>
+        </springProfile>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="ROOTINFO"/>
+    </root>
+
+
+    <!--    输出到日志文件-->
+    <!--    FileAppender-->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">　　　　　　　　
+        <file>G:/code/log/TestMybatis.log</file>　　　　　　　　
+        <append>true</append>　　　　　　　　
+        <encoder>　　　　　　　　　　
+            <pattern>时间：%d{yyyy-MM-dd HH:mm:ss.SSS} --> 线程：[%thread] %-5level %logger{50} --> %msg%n</pattern>　　　　　　　　
+        </encoder>
+    </appender>
+    <root level="DEBUG">
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

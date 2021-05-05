@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.Valid;
 
 /**
- * @Auther: Abin
+ * @author Abin
  * @Description:
  * @Date: Created in 21:06 2021/4/28
  * @Modified By:
@@ -25,6 +25,7 @@ public class ValidController {
         return "Hello_Valid";
     }
 
+
     @RequestMapping("valid")
     @ResponseBody
     public String showValidTwo(@Validated @RequestBody Student student,BindingResult bindingResult) {
@@ -37,9 +38,6 @@ public class ValidController {
     @RequestMapping("validated")
     @ResponseBody
     public String showValidated(@RequestBody @Valid Student student) {
-//        if(bindingResult.hasErrors()){
-//            return bindingResult.getFieldError().getDefaultMessage();
-//        }
         return "Hello_Validated";
     }
 }

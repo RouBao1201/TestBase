@@ -1,7 +1,6 @@
 package com.syb.exception;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -34,7 +33,22 @@ public class ControllerExceptionAdvice {
     @ExceptionHandler
     @ResponseBody
     public String controllerException(Exception e) {
-        log.debug("paramError-BindException = {}", e.getMessage());
+        log.debug("异常信息 = {}", e.getMessage());
+        return e.getMessage();
+    }
+
+
+
+    /**
+     * @author Abin
+     * @date Create in 2021/4/30 22:56
+     * @Param [e]
+     * @Description
+     */
+    @ExceptionHandler
+    @ResponseBody
+    public String controllerException(NullPointerException e) {
+        log.debug("空指针异常");
         return e.getMessage();
     }
 }
